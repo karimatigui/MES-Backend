@@ -54,6 +54,8 @@ MIDDLEWARE = [
  
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",  # Angular development server
+    'mes-backend-1.onrender.com',  # render server
+
 ]
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200',
