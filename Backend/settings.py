@@ -15,7 +15,6 @@ SECRET_KEY = 'django-insecure-_0hafal#t73@!b0ori-!e(gq*l$!_9hqzr+838q1!=#g@govx0
 DEBUG = True
  
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'mes-backend-1.onrender.com']
-print("CURRENT ALLOWED_HOSTS =", ALLOWED_HOSTS)
 
  
  
@@ -56,10 +55,14 @@ MIDDLEWARE = [
  
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",  # Angular development server
+    "http://mes-smart-factory.tn",
+
 
 ]
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:4200',
+    "http://mes-smart-factory.tn",
+
 ]
 ROOT_URLCONF = 'Backend.urls'
 CORS_ALLOW_ALL_ORIGINS = True
