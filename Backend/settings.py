@@ -90,14 +90,24 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
  
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',
+#         'USER': 'postgres',
+#         'PASSWORD': '123456',
+#         'HOST': 'localhost',  # Replace with your PostgreSQL server's address if necessary
+#         'PORT': '5432',          # Leave empty to use the default PostgreSQL port (usually 5432)
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',  # Replace with your PostgreSQL server's address if necessary
-        'PORT': '5432',          # Leave empty to use the default PostgreSQL port (usually 5432)
+        'NAME': 'postgresdb_1o28',
+        'USER': 'postgres_user',
+        'PASSWORD': 'uJePobnIwLqdR7pSIyinrhnKDsdSzE66',
+        'HOST': 'dpg-d1n8bo8dl3ps7383np40-a',
+        'PORT': '5432',
     }
 }
  
