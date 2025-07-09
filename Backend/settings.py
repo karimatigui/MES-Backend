@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
- 
+print("CURRENT ALLOWED_HOSTS =", ALLOWED_HOSTS)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
  
