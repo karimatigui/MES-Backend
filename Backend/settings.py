@@ -1,5 +1,7 @@
 import os
 from pathlib import Path
+import dj_database_url
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -101,16 +103,12 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 #     }
 # }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgresdb_1o28',
-        'USER': 'postgres_user',
-        'PASSWORD': 'uJePobnIwLqdR7pSIyinrhnKDsdSzE66',
-        'HOST': 'dpg-d1n8bo8dl3ps7383np40-a',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('postgresql://postgres_user:uJePobnIwLqdR7pSIyinrhnKDsdSzE66@dpg-d1n8bo8dl3ps7383np40-a.oregon-postgres.render.com/postgresdb_1o28')
+    )
 }
- 
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
  
