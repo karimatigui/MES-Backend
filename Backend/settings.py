@@ -107,7 +107,7 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 #         default=os.environ.get('postgresql://postgres_user:uJePobnIwLqdR7pSIyinrhnKDsdSzE66@dpg-d1n8bo8dl3ps7383np40-a.oregon-postgres.render.com/postgresdb_1o28')
 #     )
 # }
-DATABASE_URL = os.environ.get('DATABASE_URL')
+DATABASE_URL = os.environ.get('postgresql://postgres_user:uJePobnIwLqdR7pSIyinrhnKDsdSzE66@dpg-d1n8bo8dl3ps7383np40-a/postgresdb_1o28')
 
 if not DATABASE_URL:
     raise Exception("DATABASE_URL environment variable not set!")
