@@ -107,17 +107,28 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 #         default=os.environ.get('postgresql://postgres_user:uJePobnIwLqdR7pSIyinrhnKDsdSzE66@dpg-d1n8bo8dl3ps7383np40-a.oregon-postgres.render.com/postgresdb_1o28')
 #     )
 # }
-DATABASE_URL = os.environ.get('postgresql://postgres_user:uJePobnIwLqdR7pSIyinrhnKDsdSzE66@dpg-d1n8bo8dl3ps7383np40-a.oregon-postgres.render.com/postgresdb_1o28')
-print("DATABASE_URL =", repr(DATABASE_URL))
+# DATABASE_URL = os.environ.get('postgresql://postgres_user:uJePobnIwLqdR7pSIyinrhnKDsdSzE66@dpg-d1n8bo8dl3ps7383np40-a.oregon-postgres.render.com/postgresdb_1o28')
+# print("DATABASE_URL =", repr(DATABASE_URL))
 
-if not DATABASE_URL:
-    # raise Exception("DATABASE_URL environment variable not set!")
-    print("ENV DEBUG: DATABASE_URL =", DATABASE_URL)
+# if not DATABASE_URL:
+#     # raise Exception("DATABASE_URL environment variable not set!")
+#     print("ENV DEBUG: DATABASE_URL =", DATABASE_URL)
 
 
+# DATABASES = {
+#     'default': dj_database_url.parse(DATABASE_URL)
+# }
 DATABASES = {
-    'default': dj_database_url.parse(DATABASE_URL)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgresdb_1o28',
+        'USER': 'postgres_user',
+        'PASSWORD': 'uJePobnIwLqdR7pSIyinrhnKDsdSzE66',
+        'HOST': 'dpg-d1n8bo8dl3ps7383np40-a.oregon-postgres.render.com',
+        'PORT': '5432',
+    }
 }
+
 
 
 
