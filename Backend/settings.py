@@ -5,7 +5,6 @@ import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print("DATABASE_URL =", repr(DATABASE_URL))
 
  
 # Quick-start development settings - unsuitable for production
@@ -109,6 +108,7 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 #     )
 # }
 DATABASE_URL = os.environ.get('postgresql://postgres_user:uJePobnIwLqdR7pSIyinrhnKDsdSzE66@dpg-d1n8bo8dl3ps7383np40-a.oregon-postgres.render.com/postgresdb_1o28')
+print("DATABASE_URL =", repr(DATABASE_URL))
 
 if not DATABASE_URL:
     # raise Exception("DATABASE_URL environment variable not set!")
