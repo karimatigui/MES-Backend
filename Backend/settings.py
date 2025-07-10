@@ -102,11 +102,20 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 #         'PORT': '5432',          # Leave empty to use the default PostgreSQL port (usually 5432)
 #     }
 # }
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=os.environ.get('postgresql://postgres_user:uJePobnIwLqdR7pSIyinrhnKDsdSzE66@dpg-d1n8bo8dl3ps7383np40-a.oregon-postgres.render.com/postgresdb_1o28')
+#     )
+# }
+DATABASE_URL = os.environ.get('DATABASE_URL')
+
+if not DATABASE_URL:
+    raise Exception("DATABASE_URL environment variable not set!")
+
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('postgresql://postgres_user:uJePobnIwLqdR7pSIyinrhnKDsdSzE66@dpg-d1n8bo8dl3ps7383np40-a.oregon-postgres.render.com/postgresdb_1o28')
-    )
+    'default': dj_database_url.parse(DATABASE_URL)
 }
+
 
 
 # Password validation
