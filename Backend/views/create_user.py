@@ -50,8 +50,8 @@ def create_user(request):
             )
 
             # ✅ Send email
-            subject = '✅ Your ZUM IT Account Login'
-            login_url = 'https://your-app.com/login'  # Customize this
+            subject = '✅ Your ZUM-IT MES Account Login'
+            login_url = 'http://mes-smart-factory.tn/#/login'  # Customize this
             message = f"""
 Hello {user.username},
 

@@ -67,7 +67,8 @@ CORS_ORIGIN_WHITELIST = [
 
 ]
 ROOT_URLCONF = 'Backend.urls'
-CORS_ALLOW_ALL_ORIGINS = True
+# REMOVE THIS (conflicting and insecure):
+# CORS_ALLOW_ALL_ORIGINS = True
  
  
 TEMPLATES = [
