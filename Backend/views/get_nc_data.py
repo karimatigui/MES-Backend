@@ -20,7 +20,7 @@ def get_nc_data(request):
     headers = {
         'Authorization': f'Bearer {access_token}',
         'Accept': 'application/json',
-        'X-Infor-LnCompany': 5100,
+        'X-Infor-LnCompany': '5100',
     }
 
     # Step 4: Fetch from Infor API
