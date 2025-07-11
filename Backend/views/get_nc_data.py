@@ -23,7 +23,8 @@ def get_nc_data(request):
           # Step 2: Get company code dynamically
     company_response = requests.get('http://127.0.0.1:8000/api/get_ionapi_credential/')
     company_response.raise_for_status()
-    company_code = company_response.json().get('company')
+    company_code = 5100 
+    # company_response.json().get('company')
 
     if not company_code:
         return Response({'error': 'Company code missing in credentials'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
