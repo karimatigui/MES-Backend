@@ -12,6 +12,8 @@ from django.contrib.auth.hashers import make_password
 def get_nc_data(request):
     # Step 1: Get access token
     token_response = requests.get('https://mes-backend-1.onrender.com/api/get-token/')
+    # token_response = requests.get('http://localhost:8000/api/get-token/')
+
     if token_response.status_code != 200:
         return Response({'error': 'Failed to get token'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -19,10 +21,12 @@ def get_nc_data(request):
 
     # Step 2: Get company code dynamically
     company_response = requests.get('https://mes-backend-1.onrender.com/api/get_ionapi_credential/')
+    # company_response = requests.get('http://localhost:8000/api/get_ionapi_credential/')
     if company_response.status_code != 200:
         return Response({'error': 'Failed to get company'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
     company_code = company_response.json().get('company')
+    company_code = '5100'
     if not company_code:
         return Response({'error': 'Company code missing in credentials'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
@@ -33,7 +37,7 @@ def get_nc_data(request):
         # 'X-Infor-LnCompany': '5100',
         "Authorization": f"Bearer {access_token}",
         "Accept": "application/json",
-        "X-Infor-LnCompany": "5100",
+        "X-Infor-LnCompany": company_code ,
         "X-Infor-LnIdentity": "zumtech2"
     }
 
