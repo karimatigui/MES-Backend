@@ -14,7 +14,9 @@ from django.contrib.auth.hashers import make_password
 @api_view(['GET'])
 def get_nc_data(request):
     # Step 1: Get access token
-    token_response = requests.get('http://localhost:8000/api/get-token/')
+    
+    # token_response = requests.get('http://localhost:8000/api/get-token/')
+    token_response = requests.get('https://mes-backend-1.onrender.com/api/get-token/')
     if token_response.status_code != 200:
         return Response({'error': 'Failed to get token'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
