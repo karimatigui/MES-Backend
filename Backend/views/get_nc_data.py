@@ -18,9 +18,13 @@ def get_nc_data(request):
 
     # Step 3: Prepare headers
     headers = {
-        'Authorization': f'Bearer {access_token}',
-        'Accept': 'application/json',
-        'X-Infor-LnCompany': '5100',
+        # 'Authorization': f'Bearer {access_token}',
+        # 'Accept': 'application/json',
+        # 'X-Infor-LnCompany': '5100',
+        "Authorization": f"Bearer {access_token}",
+        "Accept": "application/json",
+        "X-Infor-LnCompany": "5100",
+        "X-Infor-LnIdentity": "zumtech2"
     }
 
     # Step 4: Fetch from Infor API
