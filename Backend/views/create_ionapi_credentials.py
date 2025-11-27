@@ -37,7 +37,7 @@ def create_ionapi_credentials(request):
                 sc = data.get('sc', []),
                 ev = data.get('ev', ''),
                 v = data.get('v', ''),
-                company = data.get('Company', '')
+                company = data.get('company', '')
             )
             credentials.save()
 

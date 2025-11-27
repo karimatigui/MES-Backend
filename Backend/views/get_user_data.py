@@ -14,7 +14,10 @@ def get_user_data(request, user_id):
                 'role': user.role,
                 'language': user.language,
                 'phone_number': user.phone_number,
-                'profile_image': f"/media/{user.profile_image}" if user.profile_image else ''
+                'profile_image': request.build_absolute_uri(user.profile_image.url)
+                                    if user.profile_image else ''
+
+
             }
 
             return JsonResponse(user_data, safe=False)

@@ -25,7 +25,8 @@ from .views.get_user_data import get_user_data
 from .views.delete_user import delete_user
 from .views.update_user import update_user
 from .views.login_user import login_user
-
+from .views.post_operation_active_list import post_operation_active_list
+from .views.get_operation_active_list import get_operation_active_list
 
 
 urlpatterns = [
@@ -48,6 +49,9 @@ urlpatterns = [
     path('api/get_materials/', get_materials), 
     path('api/get_related_nc_data/', get_related_nc_data), 
     path('api/post_nc_attachment/', post_nc_attachment), 
+    path('api/post_operation_active_list/', post_operation_active_list), 
+    path('api/get_operation_active_list/', get_operation_active_list),
+    # path('api/get_operation_active_list/<str:username>/', get_operation_active_list),
 
     # # ION API
     path('api/create_ionapi_credentials/', create_ionapi_credentials), 

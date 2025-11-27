@@ -32,3 +32,38 @@ class UserAccount(models.Model):
     modified_at = models.DateTimeField(auto_now=True)  # this updates every time the record is saved
     def __str__(self):
         return self.username
+    
+# ------------------------------------------------------------------
+class ActiveOperation(models.Model):
+    username = models.CharField(max_length=255, default="", blank=True, null=True)
+
+    # NEW FIELD (company_id safe)
+    company_id = models.CharField(max_length=50, default="", blank=True, null=True)
+
+    order = models.CharField(max_length=50, default="", blank=True, null=True)
+    operation = models.CharField(max_length=50, default="", blank=True, null=True)
+
+    operated_item = models.CharField(max_length=255, default="", blank=True, null=True)
+
+    reference_operation_machine_type = models.CharField(
+        max_length=255,
+        default="",
+        blank=True,
+        null=True
+    )
+
+    routing_quantity = models.FloatField(default=0, null=True)
+
+    planned_start_date = models.CharField(max_length=255, default="", blank=True, null=True)
+
+    reference_operation_work_center = models.CharField(
+        max_length=255,
+        default="",
+        blank=True,
+        null=True
+    )
+
+    operation_status = models.CharField(max_length=50, default="", blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.order} - {self.operation} ({self.username})"
