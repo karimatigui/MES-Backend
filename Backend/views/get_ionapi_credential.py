@@ -38,6 +38,7 @@ def get_ionapi_credential(request):
                 'v': record.v,
                 'company': record.company,
                 'created_at': record.created_at,
+                'filename':record.filename,
             }
             return JsonResponse(data)
         else:

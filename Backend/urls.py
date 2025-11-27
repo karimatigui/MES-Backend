@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from .views.get_operations import get_operations
 from .views.get_token import get_token
 from .views.get_dispatch_data import get_dispatch_data
+from .views.get_ping_dispatch import get_ping_dispatch
 from .views.get_nc_data import get_nc_data
 from .views.post_nc import post_nc
 from .views.complete_order import complete_order
@@ -56,6 +57,8 @@ urlpatterns = [
     # # ION API
     path('api/create_ionapi_credentials/', create_ionapi_credentials), 
     path('api/get_ionapi_credential/', get_ionapi_credential),
+    path('api/get_ping_dispatch/', get_ping_dispatch), 
+
 
     # Users
     path('api/create_user/', create_user),

@@ -15,6 +15,7 @@ class IonAPICredentials(models.Model):
     ev = models.CharField(max_length=50)
     v = models.CharField(max_length=10)
     company = models.CharField(max_length=100, blank=True, null=True)
+    filename = models.CharField(max_length=100, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return f"IonAPI for {self.cn} ({self.ti})"
