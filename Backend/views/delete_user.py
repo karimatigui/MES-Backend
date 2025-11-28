@@ -30,3 +30,4 @@ def delete_user(request, user_id):
             return JsonResponse({'error': f'Server error: {str(e)}'}, status=500)
 
     return JsonResponse({'error': 'Only DELETE method allowed'}, status=405)
+
